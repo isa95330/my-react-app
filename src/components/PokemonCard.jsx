@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 // Ajoute un paramètre props à la fonction PokemonCard
 const PokemonCard = (props) => {
@@ -23,5 +25,13 @@ const PokemonCard = (props) => {
     </figure>
   );
 };
+// Définition des types de props avec PropTypes
+PokemonCard.propTypes = {
+    pokemon: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      imgSrc: PropTypes.string,
+    }).isRequired,
+  };
+
 
 export default PokemonCard;
